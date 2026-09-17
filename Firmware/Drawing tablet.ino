@@ -48,7 +48,7 @@ int thickness = 3;
 int lastX = -1, lastY = -1;
 bool wasTouching = false;
 
-// ================= BACKLIGHT (D5, PWM) =================
+
 #define BL_PIN 5
 #define BL_PWM_FREQ 5000
 #define BL_PWM_RES  8
