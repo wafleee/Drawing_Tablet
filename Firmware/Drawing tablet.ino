@@ -31,7 +31,7 @@ uint16_t calData[5] = { 458, 3383, 331, 3407, 7 };
 #define ROW1_H 24   
 #define ROW2_H 16
 #define ROW3_H 16   
-#define MENU_H (ROW1_H + ROW2_H + ROW3_H)   // 56
+#define MENU_H (ROW1_H + ROW2_H + ROW3_H)   
 #define CANVAS_Y MENU_H
 #define CANVAS_H (SCR_H - MENU_H)
 
