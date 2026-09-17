@@ -1,15 +1,15 @@
 #include <SPI.h>
 #include <TFT_eSPI.h>
 
-// ================= CHOOSE TRANSPORT =================
-#define USE_WIFI     // comment this out and uncomment USE_BT to use Bluetooth instead
+// 
+#define USE_WIFI    // whatever you want to use/ wifi or bluetooth just uncomment 
 // #define USE_BT
 
 #ifdef USE_WIFI
   #include <WiFi.h>
   const char* WIFI_SSID = "YOUR_WIFI_SSID";
   const char* WIFI_PASS = "YOUR_WIFI_PASSWORD";
-  const char* PC_IP     = "192.168.1.50";   // your PC's LAN IP
+  const char* PC_IP     = "192.168.1.50";   // pc lan ip adress 
   const uint16_t PC_PORT = 5005;
   WiFiClient client;
 #endif
@@ -21,10 +21,10 @@
 
 TFT_eSPI tft = TFT_eSPI();
 
-// --- PASTE YOUR REAL CALIBRATION NUMBERS FROM SERIAL MONITOR HERE ---
+
 uint16_t calData[5] = { 458, 3383, 331, 3407, 7 };
 
-// ================= LAYOUT =================
+
 #define SCR_W 320
 #define SCR_H 240
 
@@ -37,14 +37,14 @@ uint16_t calData[5] = { 458, 3383, 331, 3407, 7 };
 
 uint16_t palette[] = {
   TFT_BLACK, TFT_RED, TFT_GREEN, TFT_BLUE,
-  TFT_YELLOW, TFT_ORANGE, TFT_WHITE   // white = eraser
+  TFT_YELLOW, TFT_ORANGE, TFT_WHITE   
 };
 const int numColors = 7;
 const int thickBoxW = 54;
 int swatchW = (SCR_W - thickBoxW) / numColors;
 
 uint16_t currentColor = TFT_BLACK;
-int thickness = 3;          // 1-10
+int thickness = 3;          
 int lastX = -1, lastY = -1;
 bool wasTouching = false;
 
@@ -53,7 +53,7 @@ bool wasTouching = false;
 #define BL_PWM_FREQ 5000
 #define BL_PWM_RES  8
 #define BL_CHANNEL  0
-int brightness = 200;       // 0-255
+int brightness = 200;       
 
 const int SLIDER_X1 = 10;
 const int SLIDER_X2 = SCR_W - 10;
@@ -73,7 +73,7 @@ void setBacklight(int val) {
   #endif
 }
 
-// ================= MENU DRAWING =================
+
 void drawTopRow() {
   tft.fillRect(0, 0, SCR_W, ROW1_H, TFT_DARKGREY);
   for (int i = 0; i < numColors; i++) {
@@ -132,7 +132,7 @@ void clearCanvas() {
   sendCommand("C\n");
 }
 
-// ================= NETWORK / BT SEND =================
+
 void sendCommand(const String &s) {
   #ifdef USE_WIFI
     if (client.connected()) client.print(s);
@@ -153,7 +153,7 @@ void sendStroke(int x1, int y1, int x2, int y2, uint16_t color, int th) {
   sendCommand(msg);
 }
 
-// ================= SETUP =================
+
 void setup() {
   Serial.begin(115200);
   delay(300);
@@ -168,10 +168,10 @@ void setup() {
   #endif
 
   tft.init();
-  tft.setRotation(1); // must match the rotation used during calibration
+  tft.setRotation(1);
   tft.fillScreen(TFT_WHITE);
 
-  tft.setTouch(calData);   // apply your calibration numbers from Step 1
+  tft.setTouch(calData);  
   Serial.println("Touch calibration applied");
 
   drawMenu();
@@ -201,7 +201,7 @@ void setup() {
   Serial.println("Setup complete - entering loop()");
 }
 
-// ================= MAIN LOOP =================
+
 void loop() {
   uint16_t x, y;
   bool touched = tft.getTouch(&x, &y);
@@ -240,7 +240,7 @@ void loop() {
   delay(5);
 }
 
-// ================= MENU TOUCH HANDLING =================
+
 void handleMenuTouch(int x, int y) {
   if (y < ROW1_H) {
     if (x < numColors * swatchW) {
