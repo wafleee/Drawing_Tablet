@@ -64,6 +64,14 @@ $\large\text{Price in INR }$
 | U5         |   1 | MCP73871                 | **C144351**   |         ₹456.94 |
 
 
+
+
+$\huge\text{Firmware}$
+
+You do not have to add any external software. Just upload the code to the board using a cable and the Arduino ide software will handle everything else.
+
+
+
 $\huge\text{CREDITS }$
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -71,6 +79,8 @@ ________________________________________________________________________________
 FUSION 360 - https://www.autodesk.com/in/products/fusion-360/overview
 
 KICAD - https://www.kicad.org/
+
+Arduino IDE - https://www.arduino.cc/en/software/
 
 $\large\text{FIRMWARE CREDITS  }$
 
