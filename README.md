@@ -5,6 +5,20 @@
 I am making a bluetooth drawing tablet that can send images you make on it to your computer. The main audience is people who love digital drawing but cant afford proper hardware like a Ipad and apple pencil or Large drawing pad. 
 
 
+$\huge\text{Features}$
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+- High quality image export (via BLE or Wifi)
+- Multicolor drawing
+- Save pictures to ESP32 memory
+- Long battery life (3-4 hour, with continuous usage )
+- Built in Stylus storage
+- Large Screen (2.8 inches)
+
+
+
+
+
+
 
 $\huge\text{Schematic}$
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________
