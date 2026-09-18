@@ -71,3 +71,14 @@ ________________________________________________________________________________
 FUSION 360 - https://www.autodesk.com/in/products/fusion-360/overview
 
 KICAD - https://www.kicad.org/
+
+$\large\text{FIRMWARE CREDITS  }$
+
+SPI.h
+
+TFT_eSPI.h  By Bodmer 
+
+Bluetoothserial.h
+
+
+
